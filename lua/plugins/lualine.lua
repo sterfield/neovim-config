@@ -2,12 +2,26 @@ return {
     {
         "nvim-lualine/lualine.nvim",
         requires = { "nvim-tree/nvim-web-devicons", opt = true },
-        config = function()
-            require("lualine").setup({
-                options = {
-                    theme = "catppuccin",
+        opts = {
+            sections = {
+                lualine_x = {
+                    {
+                        "filetype",
+                        colored = true,
+                        icon_only = true,
+                    },
                 },
-            })
-        end,
+                lualine_c = {
+                    {
+                        "filename",
+                        path = 3,
+                        shorting_target = 40,
+                    },
+                },
+            },
+            options = {
+                theme = "catppuccin",
+            },
+        },
     },
 }
